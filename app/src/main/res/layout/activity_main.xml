@@ -34,7 +34,7 @@
     <EditText
         android:id="@+id/FajrTime"
         android:layout_width="208dp"
-        android:layout_height="32dp"
+        android:layout_height="42dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="8dp"
@@ -57,7 +57,7 @@
     <EditText
         android:id="@+id/DhurTime"
         android:layout_width="208dp"
-        android:layout_height="33dp"
+        android:layout_height="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="28dp"
@@ -80,7 +80,7 @@
     <EditText
         android:id="@+id/AsrTime"
         android:layout_width="204dp"
-        android:layout_height="34dp"
+        android:layout_height="42dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="36dp"
@@ -103,7 +103,7 @@
     <EditText
         android:id="@+id/MaghribTime"
         android:layout_width="211dp"
-        android:layout_height="29dp"
+        android:layout_height="43dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="48dp"
@@ -126,7 +126,7 @@
     <EditText
         android:id="@+id/IshaTime"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
@@ -144,6 +144,7 @@
         android:layout_marginTop="52dp"
         android:layout_marginBottom="8dp"
         android:text="Save"
+        android:onClick="OnSaveBTNClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IshaTime"
@@ -160,6 +161,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Refresh"
+        android:onClick="OnRefreshBTNClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
