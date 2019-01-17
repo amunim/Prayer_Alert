@@ -17,27 +17,16 @@ public class GetJSONString extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... requestUrl) {
-        /*String result = null;
 
-        DefaultHttpClient httpClient = new DefaultHttpClient();
-        HttpGet request = new HttpGet(requestUrl[0]);
-
-        try {
-            ResponseHandler<String> responseHandler = new BasicResponseHandler();
-            result = httpClient.execute(request, responseHandler);
-        } catch (IOException e) {
-            Log.e("reqStringFromWebServer", "Whoops!", e);
-        }
-
-        httpClient.getConnectionManager().shutdown();
-
-        return result;*/
         try{
-            return new Scanner(new URL(requestUrl[0]).openStream(), "UTF-8").useDelimiter("//A").next();
+            String out = new Scanner(new URL(requestUrl[0]).openStream(), "UTF-8").useDelimiter("//A").next();
+            android.util.Log.w("output", out);
+            return out;
         }
         catch (IOException ioe){
             throw new RuntimeException(ioe);
         }
+
     }
 
     @Override
