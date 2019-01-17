@@ -9,13 +9,15 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.Scanner;
 
 public class GetJSONString extends AsyncTask<String, Void, String> {
     public AsyncResponse delegate = null;
 
     @Override
     protected String doInBackground(String... requestUrl) {
-        String result = null;
+        /*String result = null;
 
         DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpGet request = new HttpGet(requestUrl[0]);
@@ -29,7 +31,13 @@ public class GetJSONString extends AsyncTask<String, Void, String> {
 
         httpClient.getConnectionManager().shutdown();
 
-        return result;
+        return result;*/
+        try{
+            return new Scanner(new URL(requestUrl[0]).openStream(), "UTF-8").useDelimiter("//A").next();
+        }
+        catch (IOException ioe){
+            throw new RuntimeException(ioe);
+        }
     }
 
     @Override

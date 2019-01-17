@@ -16,17 +16,23 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
     private static final String IPSTACK_Endpoint = "http://api.ipstack.com/";
 
     private static final String PRAYER_TIMING_ENDPOINT = "http://api.aladhan.com/v1/timingsByCity";
-    private final EditText Fajr = findViewById(R.id.FajrTime);
-    private final EditText Dhur = findViewById(R.id.DhurTime);
-    private final EditText Asr = findViewById(R.id.AsrTime);
-    private final EditText Maghrib = findViewById(R.id.MaghribTime);
-    private final EditText Isha = findViewById(R.id.IshaTime);
+    private EditText Fajr;
+    private EditText Dhur;
+    private EditText Asr;
+    private EditText Maghrib;
+    private EditText Isha;
     private boolean gettingLocation = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Fajr = findViewById(R.id.FajrTime);
+        Dhur = findViewById(R.id.DhurTime);
+        Asr = findViewById(R.id.AsrTime);
+        Maghrib = findViewById(R.id.MaghribTime);
+        Isha = findViewById(R.id.IshaTime);
 
         findViewById(R.id.RefreshBTN).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,10 +65,6 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
 
             SetTimings(namaaz);
         }
-    }
-
-    public void OnIPStackObtained(IPStack stack) {
-
     }
 
     private boolean isNetworkConnected() {
